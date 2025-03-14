@@ -1,3 +1,9 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+import 'package:mytube/models/video.dart';
+import 'package:mytube/widgets/video_grid_card.dart';
+
 class AdaptiveVideoGrid extends StatelessWidget {
   final List<Video> videos;
 

@@ -1,11 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:mytube/pages/channels_tab.dart';
+import 'package:mytube/pages/home_tab.dart';
+import 'package:mytube/services/channel_manager.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   final channelManager = ChannelManager();
   bool _isLoading = true;
@@ -13,10 +18,10 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _loadChannels();
+    loadChannels();
   }
 
-  Future<void> _loadChannels() async {
+  Future<void> loadChannels() async {
     setState(() {
       _isLoading = true;
     });
@@ -40,7 +45,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  Future<void> _addChannel() async {
+  Future<void> addChannel() async {
     TextEditingController controller = TextEditingController();
 
     await showDialog(
@@ -126,7 +131,7 @@ class _HomePageState extends State<HomePage> {
           ),
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: _isLoading ? null : _addChannel,
+            onPressed: _isLoading ? null : addChannel,
           ),
         ],
         backgroundColor: const Color(0xFF1F1F1F),

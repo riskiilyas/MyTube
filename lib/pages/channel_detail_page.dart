@@ -1,4 +1,10 @@
 
+import 'package:flutter/material.dart';
+import 'package:mytube/models/channel.dart';
+import 'package:mytube/services/channel_manager.dart';
+import 'package:mytube/services/youtube_service.dart';
+import 'package:mytube/widgets/adaptive_grid_card.dart';
+
 class ChannelDetailPage extends StatefulWidget {
   final Channel channel;
 

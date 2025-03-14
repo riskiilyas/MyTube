@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:mytube/models/video.dart';
+import 'package:mytube/pages/video_player_screen.dart';
+
 class VideoGridCard extends StatelessWidget {
   final Video video;
 

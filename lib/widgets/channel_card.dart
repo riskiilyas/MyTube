@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:mytube/models/channel.dart';
+import 'package:mytube/pages/channel_detail_page.dart';
+
 class ChannelCard extends StatelessWidget {
   final Channel channel;
   final VoidCallback? onDelete;

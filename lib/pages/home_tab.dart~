@@ -1,8 +1,4 @@
 
-import 'package:flutter/material.dart';
-import 'package:mytube/services/channel_manager.dart';
-import 'package:mytube/widgets/adaptive_grid_card.dart';
-
 class HomeTab extends StatelessWidget {
   final ChannelManager channelManager;
 

@@ -1,3 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:mytube/pages/home_page.dart';
+import 'package:mytube/services/channel_manager.dart';
+import 'package:mytube/widgets/channel_card.dart';
+
 class ChannelsTab extends StatelessWidget {
   final ChannelManager channelManager;
 
@@ -28,8 +33,8 @@ class ChannelsTab extends StatelessWidget {
             const SizedBox(height: 24),
             ElevatedButton.icon(
               onPressed: () {
-                final homePage = context.findAncestorStateOfType<_HomePageState>();
-                homePage?._addChannel();
+                final homePage = context.findAncestorStateOfType<HomePageState>();
+                homePage?.addChannel();
               },
               icon: const Icon(Icons.add),
               label: const Text('Add Channel'),
@@ -73,8 +78,8 @@ class ChannelsTab extends StatelessWidget {
                 );
 
                 // Refresh the page
-                final homePage = context.findAncestorStateOfType<_HomePageState>();
-                homePage?._loadChannels();
+                final homePage = context.findAncestorStateOfType<HomePageState>();
+                homePage?.loadChannels();
               }
             },
           );

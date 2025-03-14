@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:mytube/models/video.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+
 class VideoPlayerScreen extends StatefulWidget {
   final Video video;
 

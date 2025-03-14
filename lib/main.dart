@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-import 'dart:math';
+import 'package:mytube/pages/home_page.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:mytube/services/youtube_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  YouTubeService.initApiKey();
+
   runApp(const MyApp());
 }
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Custom YouTube',
+      title: 'MyTube',
       theme: ThemeData.dark().copyWith(
         primaryColor: Colors.red,
         colorScheme: const ColorScheme.dark(

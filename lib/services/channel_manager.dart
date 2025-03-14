@@ -1,3 +1,8 @@
+import 'dart:convert';
+import 'package:mytube/models/channel.dart';
+import 'package:mytube/services/youtube_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 class ChannelManager {
   static final ChannelManager _instance = ChannelManager._internal();
   factory ChannelManager() => _instance;
@@ -140,8 +145,8 @@ class ChannelManager {
     allVideos.sort((a, b) {
       // Convert relative time strings to approximate dates for sorting
       // This is a simple approach - for production, store actual DateTime objects
-      final aWeight = _getTimeWeight(a.publishedAt);
-      final bWeight = _getTimeWeight(b.publishedAt);
+      final aWeight = _getTimeWeight(a?.publishedAt);
+      final bWeight = _getTimeWeight(b?.publishedAt);
       return aWeight.compareTo(bWeight);
     });
 

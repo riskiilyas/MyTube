@@ -1,3 +1,5 @@
+import 'package:mytube/models/video.dart';
+
 class Channel {
   final String id;
   final String name;

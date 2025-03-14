@@ -6,7 +6,7 @@ import 'package:mytube/models/video.dart';
 
 
 class YouTubeService {
-  static String _apiKey = '';
+  static String _apiKey = ''; // Add your YouTube Data API key here
   static const String _baseUrl = 'https://www.googleapis.com/youtube/v3';
 
   static initApiKey() {
